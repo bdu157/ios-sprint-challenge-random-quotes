@@ -15,15 +15,17 @@ import UIKit
 
 
 
-class RandomQuoteFetcher {
+public class RandomQuoteFetcher {
+    
+    public init() {}
     
     //var quotes: [Quote] = []
     
-    var baseUrl = URL(string: "https://andruxnet-random-famous-quotes.p.rapidapi.com")!
+    private var baseUrl = URL(string: "https://andruxnet-random-famous-quotes.p.rapidapi.com")!
     
-    let apiKey = "f0ad5ef351mshc6c5fd3b7d66f5fp16cc14jsn11efc4d5eb08"
+    private let apiKey = "f0ad5ef351mshc6c5fd3b7d66f5fp16cc14jsn11efc4d5eb08"
     
-    func fetchQuotes(count: Int, completion: @escaping (Quote?, Error?) -> Void) {
+    public func fetchQuotes(count: Int, completion: @escaping (Quote?, Error?) -> Void) {
         var urlComponents = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)
         let catQueryItem = URLQueryItem(name: "cat", value: "famous")
         let countQueryItem = URLQueryItem(name: "count", value: "\(count)")

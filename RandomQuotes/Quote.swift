@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-struct Quote: Codable, Equatable {
-    let quote: String
-    let author: String
-    let category: String
+public struct Quote: Codable {
+    public var quote: String
+    public var author: String
+    public var category: String
 }
 
