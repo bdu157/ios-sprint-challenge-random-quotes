@@ -17,13 +17,13 @@ import UIKit
 
 class RandomQuoteFetcher {
     
-    var quotes: [Quote] = []
+    //var quotes: [Quote] = []
     
     var baseUrl = URL(string: "https://andruxnet-random-famous-quotes.p.rapidapi.com")!
     
     let apiKey = "f0ad5ef351mshc6c5fd3b7d66f5fp16cc14jsn11efc4d5eb08"
     
-    func fetchQuotes(count: Int, completion: @escaping (Error?) -> Void) {
+    func fetchQuotes(count: Int, completion: @escaping (Quote?, Error?) -> Void) {
         var urlComponents = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)
         let catQueryItem = URLQueryItem(name: "cat", value: "famous")
         let countQueryItem = URLQueryItem(name: "count", value: "\(count)")
@@ -38,18 +38,18 @@ class RandomQuoteFetcher {
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
-                completion(error)
+                completion(nil, error)
                 return
             }
             
             if let error = error {
                 print(error)
-                completion(error)
+                completion(nil, error)
                 return
             }
             
             guard let data = data else {
-                completion(error)
+                completion(nil, error)
                 return
             }
             
@@ -57,11 +57,12 @@ class RandomQuoteFetcher {
             
             do {
                 let quotes = try jsonDecoder.decode([Quote].self, from: data)
-                self.quotes = quotes
-                print(self.quotes)
+                //self.quotes = quotes
+                print(quotes[0])
+                completion(quotes[0],nil)
             } catch {
                 NSLog("Error decoding animal objects: \(error)")
-                completion(error)
+                completion(nil, error)
                 return
             }
         }.resume()

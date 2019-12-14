@@ -12,12 +12,19 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var quoteTextView: UITextView!
     
+    let randomQuoteFetcher = RandomQuoteFetcher()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
-    
+
+
+    var quote: Quote? {
+        didSet {
+            updateViews()
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -28,5 +35,22 @@ class MainViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func buttonTapped(_ sender: Any) {
+        randomQuoteFetcher.fetchQuotes(count: 1) { (data, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            if let data = data {
+                DispatchQueue.main.async {
+                    self.quote = data
+                }
+            }
+        }
+    }
+    
+    private func updateViews() {
+        guard let quote = quote, isViewLoaded else {return}
+        self.quoteTextView.text = quote.quote
+    }
 }

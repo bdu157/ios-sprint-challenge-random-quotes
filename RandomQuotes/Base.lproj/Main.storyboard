@@ -18,19 +18,30 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isF-cC-9vz">
                                 <rect key="frame" x="57" y="144" width="300" height="200"/>
                                 <color key="backgroundColor" red="0.3874771595" green="0.8049350381" blue="0.99290019269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="dkn-Ox-aq1"/>
                                     <constraint firstAttribute="width" constant="300" id="rXH-5C-bUD"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Rf-hT-EHY">
+                                <rect key="frame" x="110" y="394" width="194" height="30"/>
+                                <state key="normal" title="What is Today's quote?"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="wk7-tJ-11c" eventType="touchUpInside" id="tjc-dl-hME"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="2Rf-hT-EHY" firstAttribute="leading" secondItem="KyE-ox-YJo" secondAttribute="leading" constant="110" id="K0o-Fl-QaI"/>
                             <constraint firstItem="isF-cC-9vz" firstAttribute="top" secondItem="KyE-ox-YJo" secondAttribute="top" constant="100" id="Ovf-x6-zrn"/>
                             <constraint firstItem="isF-cC-9vz" firstAttribute="centerX" secondItem="2M9-Tc-kxb" secondAttribute="centerX" id="ZGh-wp-md1"/>
+                            <constraint firstItem="KyE-ox-YJo" firstAttribute="trailing" secondItem="2Rf-hT-EHY" secondAttribute="trailing" constant="110" id="cSX-vl-l2O"/>
+                            <constraint firstItem="2Rf-hT-EHY" firstAttribute="top" secondItem="isF-cC-9vz" secondAttribute="bottom" constant="50" id="vI2-ld-1pc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KyE-ox-YJo"/>
                     </view>
