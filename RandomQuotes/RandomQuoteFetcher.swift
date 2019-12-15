@@ -23,7 +23,7 @@ public class RandomQuoteFetcher {
     
     private var baseUrl = URL(string: "https://andruxnet-random-famous-quotes.p.rapidapi.com")!
     
-    private let apiKey = "f0ad5ef351mshc6c5fd3b7d66f5fp16cc14jsn11efc4d5eb08"
+    private let apiKey = "Zn6GslkyY9mshlvCHYSrczsmBUnSp1a5FqijsnbRDlvYCO175m"
     
     public func fetchQuotes(count: Int, completion: @escaping (Quote?, Error?) -> Void) {
         var urlComponents = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)
@@ -35,7 +35,7 @@ public class RandomQuoteFetcher {
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         request.setValue("andruxnet-random-famous-quotes.p.rapidapi.com", forHTTPHeaderField: "x-rapidapi-host")
-        request.addValue("f0ad5ef351mshc6c5fd3b7d66f5fp16cc14jsn11efc4d5eb08", forHTTPHeaderField: "x-rapidapi-key")
+        request.addValue(apiKey, forHTTPHeaderField: "x-rapidapi-key")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let response = response as? HTTPURLResponse,
