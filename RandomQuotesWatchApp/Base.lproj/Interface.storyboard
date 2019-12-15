@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="RandomQuotesWatchApp" customModuleProvider="target">
+                    <items>
+                        <button width="1" height="20" alignment="left" title="Today's Quote" id="ewz-Nv-aMd">
+                            <fontDescription key="font" type="system" pointSize="11"/>
+                            <connections>
+                                <action selector="buttonTapped" destination="AgC-eL-Hgc" id="gag-2f-xUS"/>
+                            </connections>
+                        </button>
+                        <label width="136" height="106" alignment="left" textAlignment="left" numberOfLines="10" id="sVS-3n-K7r">
+                            <fontDescription key="font" type="italicSystem" pointSize="12"/>
+                        </label>
+                        <label width="136" height="18" alignment="left" textAlignment="right" id="cbi-Bd-dxi">
+                            <fontDescription key="font" type="system" pointSize="10"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="authorLabel" destination="cbi-Bd-dxi" id="esL-Jk-azi"/>
+                        <outlet property="label" destination="sVS-3n-K7r" id="ubz-7n-bod"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="145" y="504"/>
+        </scene>
+    </scenes>
+</document>

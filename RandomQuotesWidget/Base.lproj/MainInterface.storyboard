@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="RandomQuotesWidget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="30u-R0-oOO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pzm-Qh-hhY">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eLn-zZ-Dat">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="eLn-zZ-Dat" secondAttribute="bottom" id="29C-Do-m0Z"/>
+                                            <constraint firstItem="eLn-zZ-Dat" firstAttribute="leading" secondItem="Pzm-Qh-hhY" secondAttribute="leading" id="g93-Wv-N0q"/>
+                                            <constraint firstAttribute="trailing" secondItem="eLn-zZ-Dat" secondAttribute="trailing" id="hF3-9e-VAE"/>
+                                            <constraint firstItem="eLn-zZ-Dat" firstAttribute="top" secondItem="Pzm-Qh-hhY" secondAttribute="top" id="pSR-JL-AiA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Pzm-Qh-hhY" firstAttribute="top" secondItem="30u-R0-oOO" secondAttribute="top" id="KOE-Fg-W4B"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pzm-Qh-hhY" secondAttribute="bottom" id="Np2-Tl-k3B"/>
+                                    <constraint firstItem="Pzm-Qh-hhY" firstAttribute="leading" secondItem="30u-R0-oOO" secondAttribute="leading" id="rBX-iu-pcE"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pzm-Qh-hhY" secondAttribute="trailing" id="xh3-bY-dST"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="30u-R0-oOO" firstAttribute="bottom" secondItem="ssy-KU-ocm" secondAttribute="bottom" id="HYf-2L-O85"/>
+                            <constraint firstItem="30u-R0-oOO" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="Ni3-4y-rbg"/>
+                            <constraint firstItem="30u-R0-oOO" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="Pcn-S1-XKP"/>
+                            <constraint firstItem="30u-R0-oOO" firstAttribute="trailing" secondItem="ssy-KU-ocm" secondAttribute="trailing" id="sdL-vj-Jvx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="200"/>
+                    <connections>
+                        <outlet property="textView" destination="eLn-zZ-Dat" id="5Te-Qe-Jci"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="101.78571428571428"/>
+        </scene>
+    </scenes>
+</document>
